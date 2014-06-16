@@ -1,0 +1,9 @@
+include AUTHORS
+include LICENSE
+include DESCRIPTION
+include CHANGELOG.txt
+include README.md
+graft ad_rotator
+global-exclude *.orig *.pyc *.log *.swp
+prune ad_rotator/tests/coverage
+prune ad_rotator/.ropeproject
