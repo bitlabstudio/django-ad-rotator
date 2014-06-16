@@ -18,8 +18,6 @@ To get the latest commit from GitHub
 
     pip install -e git+git://github.com/bitmazk/django-ad-rotator.git#egg=ad_rotator
 
-TODO: Describe further installation steps (edit / remove the examples below):
-
 Add ``ad_rotator`` to your ``INSTALLED_APPS``
 
 .. code-block:: python
