@@ -1,11 +1,13 @@
 """Admin classes for the ad_rotator app."""
-# from django.contrib import admin
+from django.contrib import admin
 
-# from . import models
+from . import models
 
 
-# class YourModelAdmin(admin.ModelAdmin):
-#    list_display = ['some', 'fields', ]
-#    search_fields = ['some', 'fieds', ]
+class BannerAdAdmin(admin.ModelAdmin):
+    """Custom admin for the ``BannerAd`` model."""
+    list_display = ('start_date', 'end_date', 'link_url', 'link_alt_text')
+    search_fields = ['link_alt_text', 'link_url']
 
-# admin.site.register(models.YourModel, YourModelAdmin)
+
+admin.site.register(models.BannerAd, BannerAdAdmin)
