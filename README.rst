@@ -1,5 +1,5 @@
 Django Ad Rotator
-============
+=================
 
 A reusable Django app for managing and displaying banner ads.
 
@@ -29,22 +29,6 @@ Add ``ad_rotator`` to your ``INSTALLED_APPS``
         'ad_rotator',
     )
 
-Add the ``ad_rotator`` URLs to your ``urls.py``
-
-.. code-block:: python
-
-    urlpatterns = patterns('',
-        ...
-        url(r'^ad-rotator/', include('ad_rotator.urls')),
-    )
-
-Before your tags/filters are available in your templates, load them by using
-
-.. code-block:: html
-
-	{% load ad_rotator_tags %}
-
-
 Don't forget to migrate your database
 
 .. code-block:: bash
@@ -55,8 +39,18 @@ Don't forget to migrate your database
 Usage
 -----
 
-TODO: Describe usage or point to docs. Also describe available settings and
-templatetags.
+Create banner ads by creating ``BannerAd`` objects in the Django admin.
+
+Hook them up in your tempalte by just adding the ``get_banner`` inclusion tag.
+
+.. code-block:: html
+
+	{% load ad_rotator_tags %}
+
+    {% get_banner %}
+
+Customize how the banner is displayed by overriding the template at
+``ad_rotator/partials/banner.html``.
 
 
 Contribute
